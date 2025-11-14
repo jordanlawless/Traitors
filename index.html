@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Traitors: Solo — Play vs NPCs</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Traitors: Solo</h1>
+      <p class="muted">Play the Traitors game against NPCs. Works offline — add to Home Screen on iPhone.</p>
+    </header>
+
+    <main id="main">
+      <section id="setup" class="card">
+        <h2>Setup</h2>
+        <label>Number of players (including you):</label>
+        <input id="numPlayers" type="number" min="4" max="8" value="6" />
+        <label>Your name:</label>
+        <input id="playerName" type="text" maxlength="12" placeholder="You" value="You" />
+        <button id="startBtn" class="primary">Start Game (Solo)</button>
+        <p class="hint">Tip: Add to Home Screen on iPhone for app-like behavior.</p>
+      </section>
+
+      <section id="roleReveal" class="card" style="display:none">
+        <h2>Role Reveal</h2>
+        <div id="revealText"></div>
+        <button id="revealNext" class="primary">Next / Pass Device</button>
+      </section>
+
+      <section id="gameUI" style="display:none">
+        <div class="row">
+          <div class="card" id="statusCard">
+            <h3>Round</h3>
+            <div>Phase: <span id="phaseLabel"></span></div>
+            <div>Night #: <span id="roundNum">0</span></div>
+            <div>Alive: <span id="aliveCount"></span></div>
+          </div>
+
+          <div class="card" id="playersCard">
+            <h3>Players</h3>
+            <ul id="playersList"></ul>
+          </div>
+        </div>
+
+        <div id="actionArea" class="card">
+          <!-- dynamic content -->
+        </div>
+
+        <div class="card">
+          <h3>Log</h3>
+          <div id="log" class="log"></div>
+          <button id="clearLog">Clear Log</button>
+        </div>
+
+        <div class="card muted small">
+          <p>Designed for pass-and-play on a single device. To install: Safari → Share → Add to Home Screen.</p>
+        </div>
+      </section>
+
+      <section id="endCard" class="card" style="display:none">
+        <h2 id="endTitle">Game Over</h2>
+        <div id="endText"></div>
+        <button id="restartBtn" class="primary">Play Again</button>
+      </section>
+    </main>
+
+    <footer>
+      <small>Made for you — Traitors: Solo</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
